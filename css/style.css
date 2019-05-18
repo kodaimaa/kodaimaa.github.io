@@ -5,11 +5,4 @@
 body {
 	background-color: #824f4f;
 	
-	/*make page static no scrolling*/
-	position: absolute;
-    margin: 0px;
-    overflow: hidden;
-    top: 0px;
-    bottom: 0px;
-    width: 100%;
 }
