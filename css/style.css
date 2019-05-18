@@ -13,28 +13,3 @@ body {
     bottom: 0px;
     width: 100%;
 }
-div.btn-parent{
-	/*make div full screen*/
-	width: 100%;
-    height: 100vh;
-}
-
-a.btn.btn-mid {
-	height: 40%;
-	width: 20%;
-	border-radius: 50%;
-
-	/*make text center*/
-	display: flex;
-	align-items: center;
-	justify-content: center;
-
-	/*make button center of page*/
-	margin: 0;
-  	position: absolute;
-  	top: 50%;
-  	left: 50%;
-  	transform: translate(-50%, -50%);
-
-  	background-color: #7f8260;
-}
