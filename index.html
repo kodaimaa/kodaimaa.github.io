@@ -4,15 +4,70 @@
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
       <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <link rel="stylesheet" href="css/twentytwenty.css" type="text/css" media="screen" />
 
       <link type="text/css" rel="stylesheet" href="css/style.css"/>
     </head>
 
     <body>
       <div class="btn-parent">
-        <a class="waves-effect waves-light btn btn-mid">Welcome to the dark site</a>
+        <a class="waves-effect waves-light btn btn-mid" id="btnStart">Welcome to the other site</a>
+        <!-- Scaled in -->
+        <a id="btnSub-1" href="#!" class="btn-floating btn-large scale-transition scale-out">
+          <i class="material-icons">add</i>
+        </a>
+        <a id="btnSub-2" href="#!" class="btn-floating btn-large scale-transition scale-out">
+          <i class="material-icons">add</i>
+        </a>
+        <a id="btnSub-2" href="#!" class="btn-floating btn-large scale-transition scale-out">
+          <i class="material-icons">add</i>
+        </a>
+
+        <!-- Scaled out -->
+        <!-- <a id="scale-demo" href="#!" class="btn-floating btn-large scale-transition scale-out">
+          <i class="material-icons">add</i>
+        </a> -->
       </div>
+      <!-- The core Firebase JS SDK is always required and must be listed first -->
+      <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-app.js"></script>
+
+      <!-- TODO: Add SDKs for Firebase products that you want to use
+           https://firebase.google.com/docs/web/setup#config-web-app -->
+
+      <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+          apiKey: "AIzaSyAtdaSpscgKTc8oknf-HIwHWnXT5mCkJM4",
+          authDomain: "personal-personal-site.firebaseapp.com",
+          databaseURL: "https://personal-personal-site.firebaseio.com",
+          projectId: "personal-personal-site",
+          storageBucket: "personal-personal-site.appspot.com",
+          messagingSenderId: "755041527085",
+          appId: "1:755041527085:web:c20979853e0b30cf"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+      </script>
+      <script src="js/jquery-3.4.1.min.js" type="text/javascript"></script>
+      <script src="js/jquery.event.move.js" type="text/javascript"></script>
+      <script src="js/jquery.twentytwenty.js" type="text/javascript"></script>
       <!--JavaScript at end of body for optimized loading-->
       <script type="text/javascript" src="js/materialize.min.js"></script>
+      <script src="js/index.js" type="text/javascript"></script>
+
+      <script type="text/javascript">
+        $(function(){
+          $(".twentytwenty-container").twentytwenty({
+            default_offset_pct: 0.7, // How much of the before image is visible when the page loads
+            orientation: 'vertical', // Orientation of the before and after images ('horizontal' or 'vertical')
+            before_label: 'January 2017', // Set a custom before label
+            after_label: 'March 2017', // Set a custom after label
+            no_overlay: true, //Do not show the overlay with before and after
+            move_slider_on_hover: true, // Move slider on mouse hover?
+            move_with_handle_only: true, // Allow a user to swipe anywhere on the image to control slider movement. 
+            click_to_move: false // Allow a user to click (or tap) anywhere on the image to move the slider to that location.
+          });
+        });
+      </script>
     </body>
   </html>
