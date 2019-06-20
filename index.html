@@ -10,9 +10,8 @@
     </head>
 
     <body>
-      <div class="btn-parent">
+      <!-- <div class="btn-parent">
         <a class="waves-effect waves-light btn btn-mid" id="btnStart">Welcome to the other site</a>
-        <!-- Scaled in -->
         <a id="btnSub-1" href="#!" class="btn-floating btn-large scale-transition scale-out">
           <i class="material-icons">add</i>
         </a>
@@ -22,12 +21,19 @@
         <a id="btnSub-2" href="#!" class="btn-floating btn-large scale-transition scale-out">
           <i class="material-icons">add</i>
         </a>
+      </div> -->
 
-        <!-- Scaled out -->
-        <!-- <a id="scale-demo" href="#!" class="btn-floating btn-large scale-transition scale-out">
-          <i class="material-icons">add</i>
-        </a> -->
+
+      <div class='circle-container'>
+        <a id="btnStart" class='waves-effect waves-light center'>Welcome to the other site</a>
+        <a href='#' class='deg0'><img src='img/1_1.jpg'></a>
+        <a href='#' class='deg45'><img src='img/1_1.jpg'></a>
+        <a href='#' class='deg135'><img src='img/1_1.jpg'></a>
+        <a href='#' class='deg180'><img src='img/1_1.jpg'></a>
+        <a href='#' class='deg225'><img src='img/1_1.jpg'></a>
+        <a href='#' class='deg315'><img src='img/1_1.jpg'></a>
       </div>
+
       <!-- The core Firebase JS SDK is always required and must be listed first -->
       <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-app.js"></script>
 
@@ -56,6 +62,7 @@
       <script src="js/index.js" type="text/javascript"></script>
 
       <script type="text/javascript">
+
         $(function(){
           $(".twentytwenty-container").twentytwenty({
             default_offset_pct: 0.7, // How much of the before image is visible when the page loads
