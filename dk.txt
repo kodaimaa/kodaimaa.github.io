@@ -1,0 +1,11 @@
+https://developers.facebook.com/docs/messenger-platform/getting-started/sample-apps/original-coast-clothing
+
+https://developers.facebook.com/docs/messenger-platform/getting-started/sample-apps/original-coast-clothing
+
+https://github.com/jacobpa/reddit-bots
+
+https://praw.readthedocs.io/en/latest/code_overview/reddit_instance.html
+
+https://www.reddit.com/dev/api
+
+https://github.com/reddit-archive/reddit/wiki/API
