@@ -344,7 +344,7 @@ html{
 
     <script type="text/javascript">
     var btnFun = document.getElementById('btnFun');
-      document.querySelector('.envelope').addEventListener('click', function(){
+    document.querySelector('.envelope').addEventListener('click', function(){
       if (document.querySelector('.letter').classList.contains('letter--open')){
         document.querySelector('.letter').classList.remove('letter--open');
         document.querySelector('.letter').classList.add('letter--close');
@@ -364,7 +364,8 @@ html{
       }
     });
 
-    document.querySelector('.paper-close').addEventListener('click', function(){   document.querySelector('.letter').classList.remove('letter--open');
+    document.querySelector('.paper-close').addEventListener('click', function(){
+      document.querySelector('.letter').classList.remove('letter--open');
       document.querySelector('.letter').classList.add('letter--close');
       setTimeout(function(){
         document.querySelector('.letter').classList.remove('letter--close');
@@ -391,11 +392,10 @@ html{
       var times = 20;
       for (var i = 0; i < times; i++) {
         makeDiv();
-        setTimeout(function () {
-            makeDiv(), 3000);
-      });
-      break;
-    }
+        setTimeout(function () {makeDiv(), 3000});
+        break;
+      }
+    };
 
     function makeDiv(){
         // vary size for fun
