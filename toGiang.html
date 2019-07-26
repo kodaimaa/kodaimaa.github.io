@@ -373,7 +373,7 @@ html{
     });
 
     document.querySelector('#btnFun').addEventListener('click', function(){
-      makeDiv();
+      startAndStopMakeDiv();
       var audio = new Audio('sound/bDayTrumpet.mp3');
       audio.addEventListener('ended', function() {
           this.currentTime = 0;
@@ -387,9 +387,19 @@ html{
       // }
     });
 
+    function startAndStopMakeDiv{
+      var times = 20;
+      for (var i = 0; i < times; i++) {
+        makeDiv();
+        setTimeout(function () {
+            makeDiv(), 3000);
+      };
+      break;
+    }
+
     function makeDiv(){
         // vary size for fun
-        var divsize = ((Math.random()*100) + 50).toFixed();
+        var divsize = ((Math.random()*200) + 50).toFixed();
         //random color
         var color = '#'+ Math.round(0xffffff * Math.random()).toString(16);
         //random file
@@ -397,7 +407,7 @@ html{
                       'Fireworks','Fireworks2','Fireworks3','Fireworks4','Fireworks5',
                       'Fireworks6','Fireworks7','Glitter','Glitter2','Glitter3',
                       'Glitter4','Glitter5', 'Horn', 'Horn2'];
-        var name = myArray[Math.floor(Math.random() * myArray.length)];
+        var name = myArray[Math.floor(Math.random()*myArray.length)];
         var url = 'url(img/bDay' + name + '.gif)';
         console.log(url);
         $newdiv = $('<div/>').css({
@@ -417,9 +427,8 @@ html{
             'left':posx+'px',
             'top':posy+'px',
             'display':'none'
-        }).appendTo( 'body' ).fadeIn(600).delay(2500, function(){
-          makeDiv();
-        });
+        }).appendTo( 'body' ).fadeIn(600).delay(2500);
+
     };
 
     </script>
