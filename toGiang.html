@@ -3,6 +3,9 @@
   <head>
     <meta charset="utf-8">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Great+Vibes' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet" type="text/css">
+
     <title>It's your birthday!!!!!!!!</title>
     <style media="screen">
       @keyframes upthenscale {
@@ -81,11 +84,19 @@
   }
 }
 
+ /* background color */
+
+html{
+  background: #9796f0;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #fbc7d4, #9796f0);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #fbc7d4, #9796f0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  height: 100%;
+}
 
 .letter {
-  margin: 150px auto;
+  margin: 10px auto;
   max-width: 550px;
-  height: 675px;
+  height: 600px;
   position: relative;
   overflow: hidden;
   display: block;
@@ -115,8 +126,9 @@
 
 .paper-content {
   color: #545454;
-  font-family: 'Roboto', sans-serif;
-  font-weight: 700;
+  font-family: 'Pacifico', cursive;
+  font-weight: 60;
+  font-size: 14px;
   padding: 25px;
   opacity: 0;
 }
@@ -124,12 +136,13 @@
 .paper {
   height: 50px;
   width: 90px;
-  background: #f1f0c3;
-  transform: translateY(250px);
+  background: url(img/paper.jpg);
+  transform: translateY(263px);
   margin: 0 auto;
   transition: transform 0.3s 0.1s ease;
   border-radius: 2px;
   position: relative;
+
 }
 
 .envelope {
@@ -214,7 +227,7 @@
     display: block;
     position: absolute;
     background: #f36363;
-    border-top: 2px solid transparent;
+    border-top: 5px solid transparent;
     &:before {
     content: '';
     width: 750px;
@@ -279,10 +292,9 @@
         <div class="envelope-detail"></div>
       </div>
       <div class="paper">
-        <div class="paper-content">
-          <div class="paper-close">x</div>
-          Dear Giang,
-          </br></br>
+        <div class="paper-content" >
+          <div class="paper-close" style="font-family:cursive;">Close</div>
+          <h2 style="font-family: 'Great Vibes';">Dear Giang,</h2>
           I love and appreciate you from the bottom of my heart. Saying these things
           are embarrassing in Vietnamese nhưng mà tao sẽ cố. Mày là người bạn kiên
           nhẫn và vị tha nhất mà tao có luôn. Qua bao nhiêu lần fuck up mày vẫn tha
@@ -296,7 +308,7 @@
           </br></br>
           Sinh nhật vui vẻ thắng lợi thành công tốt đẹp!!!! Tuổi mới niệm thần chú "Mình làm cái đéo gì cũng được. Ai quan tâm hay không đều không liên quan."
           </br></br>
-          Trà
+          Trà <span style="float:right; color:rgba(0, 0, 0, 0.1);">How's that for font sến</span>
         </div>
       </div>
     </div>
