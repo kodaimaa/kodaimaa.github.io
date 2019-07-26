@@ -376,10 +376,12 @@ html{
 
     document.querySelector('#btnFun').addEventListener('click', function(){
       startAndStopMakeDiv(0);
-      playAudio('sound/bDayTrumpet.mp3');
-      wait(4000);
-      playAudio('sound/bDayHonk.mp3');
-      playAudio('sound/bDayClapping.mp3', 0.4);
+      setTimeout(function(){
+        playAudio('sound/bDayHonk.mp3', 0.8);
+        playAudio('sound/bDayClapping.mp3', 0.4);
+      }, 4000);
+      playAudio('sound/bDayTrumpet.mp3', 1);
+
       // if (document.querySelector('.letter').classList.contains('letter--open')) {
       //   document.querySelector('.fun').style.display = 'block';
       // } else {
@@ -431,15 +433,6 @@ html{
 
     };
 
-    function playAudio(audioPath) {
-      var audio = new Audio(audioPath);
-      audio.addEventListener('ended', function() {
-          this.currentTime = 0;
-          this.play();
-      }, false);
-      audio.play()
-    };
-
     function playAudio(audioPath, volume) {
       var audio = new Audio(audioPath);
       audio.volume = volume;
@@ -447,6 +440,7 @@ html{
           this.currentTime = 0;
           this.play();
       }, false);
+      console.log("playing: " + audioPath)
       audio.play()
     };
 
