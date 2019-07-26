@@ -344,6 +344,7 @@ html{
 
     <script type="text/javascript">
     var btnFun = document.getElementById('btnFun');
+    var numberOfGif = 20;
     document.querySelector('.envelope').addEventListener('click', function(){
       if (document.querySelector('.letter').classList.contains('letter--open')){
         document.querySelector('.letter').classList.remove('letter--open');
@@ -374,7 +375,7 @@ html{
     });
 
     document.querySelector('#btnFun').addEventListener('click', function(){
-      startAndStopMakeDiv();
+      startAndStopMakeDiv(0);
       var audio = new Audio('sound/bDayTrumpet.mp3');
       audio.addEventListener('ended', function() {
           this.currentTime = 0;
@@ -388,18 +389,21 @@ html{
       // }
     });
 
-    function startAndStopMakeDiv(){
-      var times = 20;
-      for (var i = 0; i < times; i++) {
-        makeDiv();
-        setTimeout(function () {makeDiv(), 3000});
-        break;
+    function startAndStopMakeDiv(counter){
+      makeDiv();
+      if (counter < numberOfGif) {
+        setTimeout(function () {
+          counter++;
+          console.log("made");
+          makeDiv();
+          startAndStopMakeDiv(counter);
+        }, 2500);
       }
     };
 
     function makeDiv(){
         // vary size for fun
-        var divsize = ((Math.random()*200) + 50).toFixed();
+        var divsize = ((Math.random()*300) + 50).toFixed();
         //random color
         var color = '#'+ Math.round(0xffffff * Math.random()).toString(16);
         //random file
@@ -409,7 +413,6 @@ html{
                       'Glitter4','Glitter5', 'Horn', 'Horn2'];
         var name = myArray[Math.floor(Math.random()*myArray.length)];
         var url = 'url(img/bDay' + name + '.gif)';
-        console.log(url);
         $newdiv = $('<div/>').css({
             'width':divsize+'px',
             'height':divsize+'px',
