@@ -5,6 +5,7 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Great+Vibes' rel='stylesheet' type='text/css'>
     <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC&display=swap" rel="stylesheet">
 
     <title>It's your birthday!!!!!!!!</title>
     <style media="screen">
@@ -281,18 +282,44 @@ html{
   display: inline-block;
   cursor: pointer;
 }
+
+.logo{
+  color:rgba(255,255,255, 0.2);
+  max-width: 200px;
+  text-align: center;
+  margin-left: 20px;
+  margin-bottom: -50px;
+  text-transform: capitalize;
+}
+
+#btnFun{
+  padding: 10px;
+  border-radius: 50%;
+  background-color: #f36363;
+  position: absolute;
+  margin: auto auto auto 250px;
+  font-family: 'Amatic SC', cursive;
+  visibility: hidden;
+  transition: visibility 7s, opacity 7s ease-out;
+}
     </style>
   </head>
   <body>
+    <div class="logo">
+      Powered by StackOverflow <br>(and me!)
+    </div>
+
 
     <div class="letter">
       <div class="envelope">
         <div class="envelope-flap"></div>
         <div class="envelope-paper"></div>
-        <div class="envelope-detail"></div>
+        <div class="envelope-detail"><span style="display:table;margin:0 auto;color:#bd3371f7;">&#10084;</span></div>
       </div>
       <div class="paper">
+
         <div class="paper-content" >
+          <button type="button" name="button" id="btnFun">Click here for fun stuff</button>
           <div class="paper-close" style="font-family:cursive;">Close</div>
           <h2 style="font-family: 'Great Vibes';">Dear Giang,</h2>
           I love and appreciate you from the bottom of my heart. Saying these things
@@ -308,30 +335,93 @@ html{
           </br></br>
           Sinh nhật vui vẻ thắng lợi thành công tốt đẹp!!!! Tuổi mới niệm thần chú "Mình làm cái đéo gì cũng được. Ai quan tâm hay không đều không liên quan."
           </br></br>
-          Trà <span style="float:right; color:rgba(0, 0, 0, 0.1);">How's that for font sến</span>
+          Trà
+          <span style="float:right; color:rgba(0, 0, 0, 0.1);">How's that for font sến</span>
         </div>
       </div>
     </div>
-<script type="text/javascript">
-  document.querySelector('.envelope').addEventListener('click', function(){
-  if (document.querySelector('.letter').classList.contains('letter--open')){
-    document.querySelector('.letter').classList.remove('letter--open');
-    document.querySelector('.letter').classList.add('letter--close');
-    setTimeout(function(){
-      document.querySelector('.letter').classList.remove('letter--close');
-    }, 600);
-  } else {
-    document.querySelector('.letter').classList.remove('letter--close');
-    document.querySelector('.letter').classList.add('letter--open');
-  }
-});
+    <script src="js/jquery-3.4.1.min.js" type="text/javascript"></script>
 
-document.querySelector('.paper-close').addEventListener('click', function(){   document.querySelector('.letter').classList.remove('letter--open');
-  document.querySelector('.letter').classList.add('letter--close');
-  setTimeout(function(){
-    document.querySelector('.letter').classList.remove('letter--close');
-  }, 600);
-});
-</script>
+    <script type="text/javascript">
+    var btnFun = document.getElementById('btnFun');
+      document.querySelector('.envelope').addEventListener('click', function(){
+      if (document.querySelector('.letter').classList.contains('letter--open')){
+        document.querySelector('.letter').classList.remove('letter--open');
+        document.querySelector('.letter').classList.add('letter--close');
+        setTimeout(function(){
+          document.querySelector('.letter').classList.remove('letter--close');
+        }, 600);
+        // btnFun
+
+        btnFun.style.visibility = 'hidden';
+        btnFun.style.height(0);
+        btnFun.style.width(0);
+      } else {
+        document.querySelector('.letter').classList.remove('letter--close');
+        document.querySelector('.letter').classList.add('letter--open');
+
+        btnFun.style.visibility = 'visible';
+      }
+    });
+
+    document.querySelector('.paper-close').addEventListener('click', function(){   document.querySelector('.letter').classList.remove('letter--open');
+      document.querySelector('.letter').classList.add('letter--close');
+      setTimeout(function(){
+        document.querySelector('.letter').classList.remove('letter--close');
+      }, 600);
+
+    });
+
+    document.querySelector('#btnFun').addEventListener('click', function(){
+      makeDiv();
+      var audio = new Audio('sound/bDayTrumpet.mp3');
+      audio.addEventListener('ended', function() {
+          this.currentTime = 0;
+          this.play();
+      }, false);
+      audio.play()
+      // if (document.querySelector('.letter').classList.contains('letter--open')) {
+      //   document.querySelector('.fun').style.display = 'block';
+      // } else {
+      //   document.querySelector('.fun').style.display = 'none';
+      // }
+    });
+
+    function makeDiv(){
+        // vary size for fun
+        var divsize = ((Math.random()*100) + 50).toFixed();
+        //random color
+        var color = '#'+ Math.round(0xffffff * Math.random()).toString(16);
+        //random file
+        var myArray = ['Balloons','Balloons2','Cat','Cups','Dog',
+                      'Fireworks','Fireworks2','Fireworks3','Fireworks4','Fireworks5',
+                      'Fireworks6','Fireworks7','Glitter','Glitter2','Glitter3',
+                      'Glitter4','Glitter5', 'Horn', 'Horn2'];
+        var name = myArray[Math.floor(Math.random() * myArray.length)];
+        var url = 'url(img/bDay' + name + '.gif)';
+        console.log(url);
+        $newdiv = $('<div/>').css({
+            'width':divsize+'px',
+            'height':divsize+'px',
+            'background':url,
+            'background-size':'100% 100%'
+        }).addClass('fun');
+        var listImg = 'img/bDay';
+
+        // make position sensitive to size and document's width
+        var posx = (Math.random() * ($(document).width() - divsize)).toFixed();
+        var posy = (Math.random() * ($(document).height() - divsize)).toFixed();
+
+        $newdiv.css({
+            'position':'absolute',
+            'left':posx+'px',
+            'top':posy+'px',
+            'display':'none'
+        }).appendTo( 'body' ).fadeIn(600).delay(2500, function(){
+          makeDiv();
+        });
+    };
+
+    </script>
   </body>
 </html>
