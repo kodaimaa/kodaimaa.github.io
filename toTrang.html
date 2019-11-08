@@ -5,7 +5,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="css/wordart.css" rel="stylesheet">
+    <link href="css/wordart.scss" rel="stylesheet">
     <title>GRAAAAAAAAAAAAAAAAAAAAAAAAAAAAAANT</title>
     <style>
         .footer {
@@ -28,7 +28,6 @@
         if(confirm('This page only works properly on Chrome, Edge or Safari. Do you wanna continue to the site?')){
             startAndStopMakeDiv(0);
             setTimeout(function(){
-                playAudio('sound/bDayHonk.mp3', 0.8);
                 playAudio('sound/bDayClapping.mp3', 0.25);
             }, 4000);
             playAudio('sound/bDayTrumpet2.mp3', 1);
@@ -48,7 +47,6 @@
         'We`ll be there even if we don`t!',
         '*insert more cliches*',
         'I love you!'];
-        console.log(counter);
       makeDiv(myMessage[counter]);
       if (counter < 11) {
         setTimeout(function () {
@@ -68,8 +66,8 @@
       //   'Fireworks','Fireworks2','Fireworks3','Fireworks4','Fireworks5',
       //   'Fireworks6','Fireworks7','Glitter','Glitter2','Glitter3',
       //   'Glitter4','Glitter5', 'Horn', 'Horn2'];
-      var myWordartArray = ['rainbow', 'blues', 'purple', 'superhero', 'radial', 'tilt',
-      'horizon', 'italic-outline', 'slate'];
+      var myWordartArray = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten',
+      'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen', 'twenty'];
       // var name = myArray[Math.floor(Math.random()*myArray.length)];
       // var url = 'url(img/bDay' + name + '.gif)';
       $newdiv = $('<div/>')
@@ -79,7 +77,7 @@
         // 'background': '#7C822D',
         'background-size':'100% 100%'
       })
-          .addClass('wordart ' + myWordartArray[Math.floor(Math.random()*myWordartArray.length)])
+          .addClass('wordart style-' + myWordartArray[Math.floor(Math.random()*myWordartArray.length)])
           .html(message);
 
       // make position sensitive to size and document's width
@@ -102,7 +100,6 @@
         this.currentTime = 0;
         this.play();
       }, false);
-      console.log("playing: " + audioPath)
       audio.play()
     };
   </script>
